@@ -1,0 +1,28 @@
+{
+  "subjects": [
+    "Mathematics",
+    "Combined Science",
+    "Geography",
+    "Shona",
+    "English",
+    "Heritage",
+    "Commerce",
+    "Accounts"
+  ],
+  "studyModes": [
+    "Daily lesson",
+    "Quiz",
+    "Past paper review",
+    "Prediction",
+    "Project assistant",
+    "Revision plan"
+  ],
+  "examPrepChecklist": [
+    "Upload syllabus",
+    "Upload past papers",
+    "Add notes",
+    "Create chapter summaries",
+    "Generate practice questions",
+    "Track weak topics"
+  ]
+}
