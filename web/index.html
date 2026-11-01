@@ -1,0 +1,27 @@
+const fs = require('fs');
+const path = require('path');
+const { DATA_DIR } = require('../server/config');
+
+const dataFolder = path.resolve(process.cwd(), DATA_DIR);
+const dbPath = path.join(dataFolder, 'app-db.json');
+
+if (!fs.existsSync(dataFolder)) {
+  fs.mkdirSync(dataFolder, { recursive: true });
+}
+
+if (!fs.existsSync(dbPath)) {
+  fs.writeFileSync(dbPath, JSON.stringify({ students: [], documents: [], payments: [] }, null, 2));
+}
+
+function readDB() {
+  return JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+}
+
+function writeDB(data) {
+  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+}
+
+module.exports = {
+  readDB,
+  writeDB
+};

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zimsec AI Study Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="brand">Zimsec AI</div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#assistant">Assistant</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+      </nav>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="tag">Zimsec Exam Intelligence</span>
+          <h1>AI-powered learning for Zimbabwean students</h1>
+          <p>
+            WhatsApp tutor, exam prediction engine, syllabus analysis, notes explanations,
+            past paper insights, project guidance, and audio/music support in one system.
+          </p>
+          <div class="hero-actions">
+            <a href="#assistant" class="btn primary">Try the assistant</a>
+            <a href="/dashboard.html" class="btn secondary">Dashboard</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What your bot can do</h3>
+          <ul>
+            <li>Explain Zimsec syllabus topics</li>
+            <li>Generate likely exam questions</li>
+            <li>Break down notes beautifully</li>
+            <li>Study with AI coaching</li>
+            <li>Assist with project work</li>
+            <li>Generate music and audio summaries</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="features" class="container section">
+        <h2>Core features</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Exam Prediction</h3>
+            <p>AI predicts likely chapters, answer formats, and paper structure.</p>
+          </div>
+          <div class="card">
+            <h3>Notes & Explanations</h3>
+            <p>Breaks complex topics into student-friendly teaching language.</p>
+          </div>
+          <div class="card">
+            <h3>Past Papers</h3>
+            <p>Analyzes previous questions and highlights repeating patterns.</p>
+          </div>
+          <div class="card">
+            <h3>Project Assistant</h3>
+            <p>Generates titles, objectives, timelines, and methodology for projects.</p>
+          </div>
+          <div class="card">
+            <h3>WhatsApp Bot</h3>
+            <p>Students can ask questions and receive instant guidance on their phone.</p>
+          </div>
+          <div class="card">
+            <h3>Music & Audio</h3>
+            <p>Audio summaries and creative study sound generation for engagement.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="assistant" class="section alt">
+        <div class="container chat-panel">
+          <h2>AI assistant preview</h2>
+          <div class="chat-box" id="chatBox">
+            <div class="message bot">Hello! I am your Zimsec AI tutor. Ask me about Mathematics, Biology, History, or your project work.</div>
+          </div>
+          <div class="chat-controls">
+            <input id="chatInput" type="text" placeholder="Ask a question..." />
+            <button id="sendBtn">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="container section">
+        <h2>Simple access model</h2>
+        <div class="grid pricing-grid">
+          <div class="card plan">
+            <h3>Basic</h3>
+            <p class="price">Free</p>
+            <ul>
+              <li>Limited AI chats</li>
+              <li>Basic syllabus help</li>
+              <li>Public notes</li>
+            </ul>
+          </div>
+          <div class="card plan featured">
+            <h3>Pro</h3>
+            <p class="price">EcoCash</p>
+            <ul>
+              <li>Full AI tutor access</li>
+              <li>Past paper prediction</li>
+              <li>Project assistant</li>
+              <li>Priority study support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

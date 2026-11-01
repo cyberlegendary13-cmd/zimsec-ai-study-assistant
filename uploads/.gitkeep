@@ -1,0 +1,44 @@
+const chatBox = document.getElementById('chatBox');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+
+function addMessage(text, sender = 'bot') {
+  const div = document.createElement('div');
+  div.className = `message ${sender}`;
+  div.textContent = text;
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function sendChatMessage() {
+  const value = chatInput.value.trim();
+  if (!value) return;
+
+  addMessage(value, 'user');
+  chatInput.value = '';
+
+  try {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: value,
+        subject: 'General',
+        examType: 'zimsec',
+        mode: 'chat'
+      })
+    });
+
+    const data = await response.json();
+    addMessage(data.answer || 'Your AI tutor will respond here when keys are configured.', 'bot');
+  } catch (error) {
+    addMessage('AI connection failed. Add your API keys in .env to enable live responses.', 'bot');
+  }
+}
+
+sendBtn.addEventListener('click', sendChatMessage);
+chatInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') sendChatMessage();
+});

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Zimsec AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="dashboard-body">
+    <nav class="dashboard-nav container">
+      <div class="brand">Zimsec AI</div>
+      <a href="/">Home</a>
+    </nav>
+
+    <main class="container dashboard-wrap">
+      <aside class="sidebar">
+        <h3>Student Dashboard</h3>
+        <ul>
+          <li>Profile</li>
+          <li>Subjects</li>
+          <li>Past Papers</li>
+          <li>Predicted Papers</li>
+          <li>Project Assistant</li>
+          <li>Billing</li>
+        </ul>
+      </aside>
+
+      <section class="dashboard-content">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h4>Subjects</h4>
+            <p>12</p>
+          </div>
+          <div class="stat-card">
+            <h4>Predicted Topics</h4>
+            <p>27</p>
+          </div>
+          <div class="stat-card">
+            <h4>Past Papers</h4>
+            <p>94</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>AI study plan</h3>
+          <ul>
+            <li>Monday: Mathematics paper practice</li>
+            <li>Tuesday: Biology diagrams and revision</li>
+            <li>Wednesday: History essay planning</li>
+            <li>Thursday: Geography map work</li>
+            <li>Friday: Project checkpoint</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

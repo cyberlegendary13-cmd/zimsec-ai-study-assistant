@@ -1,0 +1,35 @@
+{
+  "name": "zimsec-ai-study-assistant",
+  "version": "1.0.0",
+  "description": "Zimsec AI study assistant with WhatsApp bot, website, syllabus analysis, and exam prediction features",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "keywords": [
+    "zimsec",
+    "education",
+    "ai",
+    "whatsapp",
+    "exam-prediction",
+    "study-assistant"
+  ],
+  "author": "Cyberlegendary13",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.13",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "lowdb": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "pino": "^9.0.0",
+    "qrcode-terminal": "^0.12.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.16"
+  }
+}
