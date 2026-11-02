@@ -1,21 +1,12 @@
 {
   "name": "zimsec-ai-whatsapp-bot",
   "version": "1.0.0",
-  "description": "Standalone WhatsApp bot for Zimsec AI tutoring using Baileys and OpenAI",
+  "description": "WhatsApp bot with multi-model AI routing for tutoring, paper analysis, and audio generation",
   "main": "bot/index.js",
   "scripts": {
     "start": "node bot/index.js",
     "dev": "node bot/index.js"
   },
-  "keywords": [
-    "whatsapp",
-    "baileys",
-    "ai",
-    "zimsec",
-    "bot"
-  ],
-  "author": "Cyberlegendary13",
-  "license": "MIT",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.13",
     "axios": "^1.7.2",
