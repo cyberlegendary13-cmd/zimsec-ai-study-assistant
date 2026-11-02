@@ -1,15 +1,15 @@
 {
-  "name": "zimsec-ai-whatsapp-bot",
+  "name": "zhou-ai-web",
   "version": "1.0.0",
-  "description": "WhatsApp bot with multi-model AI routing for tutoring, paper analysis, and audio generation",
-  "main": "bot/index.js",
+  "description": "Classic and advanced Zhou AI website with AI chat",
+  "main": "server.js",
   "scripts": {
-    "start": "node bot/index.js",
-    "dev": "node bot/index.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.7.13",
     "axios": "^1.7.2",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   }
 }
