@@ -1,15 +1,19 @@
 {
-  "name": "zhou-ai-web",
+  "name": "zimsec-tutor-bot",
   "version": "1.0.0",
-  "description": "Classic and advanced Zhou AI website with AI chat",
-  "main": "server.js",
+  "description": "ZIMSEC WhatsApp study bot with multi-model AI tutoring, syllabus planning, and media-aware exam support.",
+  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
     "axios": "^1.7.2",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mime-types": "^2.1.35",
+    "qrcode-terminal": "^0.12.0"
   }
 }

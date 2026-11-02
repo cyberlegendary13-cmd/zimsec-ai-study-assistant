@@ -1,119 +1,52 @@
-# Zimsec AI Study Assistant
+# ZIMSEC Tutor Bot
 
-A full-stack educational assistant for Zimsec students that combines:
-- WhatsApp coaching via Baileys
-- AI subject tutoring with Gemini, Claude, OpenAI, Groq
-- music generation via Suno
-- syllabus and past paper analysis
-- exam prediction engine
-- grade-focused study support
-- project assistant features for research and assignment help
-- website dashboard for students and admins
-- Ecocash payment stub for premium access
+A WhatsApp study assistant for ZIMSEC O-Level revision and exam preparation.
 
-## Features
+Features
+- WhatsApp pairing and session persistence
+- multi-model AI routing using OpenAI, Gemini, Claude, and Groq
+- Suno-ready media generation placeholder for future expansion
+- exam-focused commands for revision planning and topic analysis
+- support for image and audio message handling in the bot flow
+- syllabus-style study suggestions and 2-week readiness planning
+- simple HTTP health/status endpoint for panel monitoring
 
-- WhatsApp bot with Baileys
-- Image and audio analysis support
-- Syllabus upload and document indexing
-- Past paper upload and trend analysis
-- Predicted exam papers generation
-- Notes explanation and concept breakdown
-- Study planner and revision guidance
-- Subject-specific AI tutor
-- Project assistant for school research work
-- Music generation / audio summaries via Suno
-- Student website UI
-- Payment gateway integration placeholder for Ecocash
+Project structure
+- index.js - starts the Express app and bot lifecycle
+- services/aiRouter.js - model routing and OpenAI/Gemini/Claude/Groq request logic
+- services/commandHandler.js - parsing commands and study prompts
+- services/studyEngine.js - 2-week plan, quiz, summary, topic analysis helpers
+- services/whatsapp.js - WhatsApp connection with QR pairing and message listener
+- config/env.js - environment handling
 
-## Tech stack
+Environment variables
+Create a .env file using .env.example and add your keys.
 
-- Node.js + Express
-- Baileys for WhatsApp
-- LowDB JSON file storage
-- Gemini, Claude, OpenAI, Groq, and Suno API adapters
-- Vanilla HTML/CSS/JS frontend
+Minimum working setup
+OPENAI_API_KEY=your_key_here
+OPENAI_MODEL=gpt-4o-mini
+PORT=3000
 
-## Directory structure
+Run locally
+npm install
+npm start
 
-- `server/` — backend API
-- `bot/` — WhatsApp bot logic
-- `web/` — frontend site
-- `data/` — JSON persistence
-- `uploads/` — uploaded files
-- `README.md` — project guide
+Deployment
+Deploy this project as a Node.js app on a hosting platform. Keep the bot process alive and use your environment variables for all secrets.
 
-## Quick start
-
-1. Install dependencies:
-   npm install
-
-2. Copy environment file:
-   cp .env.example .env
-
-3. Fill in API keys.
-
-4. Start dev server:
-   npm run dev
-
-5. Visit the website at:
-   http://localhost:5000
-
-## WhatsApp bot
-
-The bot is configured through `bot/whatsapp.js` and `bot/handlers/messageHandler.js`.
-The app can answer:
+Main commands
 - /start
-- /subjects
-- /predict
-- /quiz
-- /notes
-- /past
-- /project
 - /help
+- /plan mathematics
+- /quiz biology
+- /analyze geography
+- /summary chemistry organic chemistry
+- /status
+- /model
 
-## AI models
-
-The project supports:
-- Gemini
-- Claude
-- OpenAI / ChatGPT
-- Groq
-- Suno
-
-Each model is routed via `server/services/aiRouter.js`.
-
-## Deployment
-
-See the deployment guide in this README and the production instructions below.
-
-## Production deployment ideas
-
-- Render
-- Railway
-- Fly.io
-- Vercel or Cloudflare Pages for frontend
-- Supabase or managed Postgres for DB if you grow later
-
-## Android / Samsung M31 notes
-
-For testing and local development, use Termux and run the app as a Node service. For production, use a hosting provider because WhatsApp bots should ideally run on a stable server.
-
-## Important
-
-This project is a strong starter, not a polished commercial product. It is designed to be expanded with your own syllabus documents, paid integrations, and real AI keys.
-
-## Project assistant feature
-
-This app includes a project assistant that can help students:
-- choose a school project topic
-- draft project titles
-- generate project objectives and hypotheses
-- describe methodology
-- create project timelines
-- produce references and summaries
-- explain research steps
-
-## Payment
-
-The Ecocash flow is scaffolded, but you must connect it to a real provider or gateway for real payments.
+Good next steps
+- add real PDF analysis support
+- add stronger image/audio understanding using model vision features
+- add a database for user progress tracking
+- add flashcards, timed tests, and revision reminders
+- add a payment layer later
