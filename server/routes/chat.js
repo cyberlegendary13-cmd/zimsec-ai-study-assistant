@@ -1,19 +1,31 @@
 const express = require('express');
 const router = express.Router();
+const { generateAssistantReply, generatePrediction, generateProjectPlan } = require('../services/aiRouter');
 
-router.get('/', (req, res) => {
-  res.json({
-    status: 'ok',
-    app: 'Zimsec AI Study Assistant',
-    features: [
-      'WhatsApp coaching',
-      'Exam prediction',
-      'Notes explanation',
-      'Past papers',
-      'Project assistant',
-      'Syllabus intelligence'
-    ]
-  });
+router.post('/', async (req, res) => {
+  try {
+    const { message, subject, examType, mode, model } = req.body;
+
+    if (!message) {
+      return res.status(400).json({ error: 'Message is required' });
+    }
+
+    if (mode === 'predict') {
+      const result = await generatePrediction({ subject, examType, message, model });
+      return res.json(result);
+    }
+
+    if (mode === 'project') {
+      const result = await generateProjectPlan(message, model);
+      return res.json(result);
+    }
+
+    const result = await generateAssistantReply({ message, subject, examType, model });
+    res.json(result);
+  } catch (error) {
+    console.error('Chat error', error);
+    res.status(500).json({ error: 'Failed to process message' });
+  }
 });
 
 module.exports = router;
