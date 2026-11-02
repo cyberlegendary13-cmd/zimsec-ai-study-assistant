@@ -6,7 +6,7 @@ const fs = require('fs');
 
 dotenv.config();
 
-const { PORT, NODE_ENV, UPLOAD_DIR, DATA_DIR } = require('./config');
+const { PORT, UPLOAD_DIR, DATA_DIR } = require('./config');
 
 async function initDirectories() {
   if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
@@ -23,6 +23,10 @@ app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.use('/api/health', require('./routes/health'));
 app.use('/api/chat', require('./routes/chat'));
+app.use('/api/models', require('./routes/models'));
+app.use('/api/subjects', require('./routes/subjects'));
+app.use('/api/students', require('./routes/students'));
+app.use('/api/analytics', require('./routes/analytics'));
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/admin', require('./routes/admin'));
